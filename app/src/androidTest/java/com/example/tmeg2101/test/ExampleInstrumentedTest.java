@@ -1,4 +1,4 @@
-package com.example.isve1901.collegeapp;
+package com.example.tmeg2101.test;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.isve1901.collegeapp", appContext.getPackageName());
+        assertEquals("com.example.tmeg2101.test", appContext.getPackageName());
     }
 }

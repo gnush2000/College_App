@@ -1,4 +1,4 @@
-package com.example.isve1901.collegeapp;
+package com.example.tmeg2101.test;
 
 import org.junit.Test;
 
