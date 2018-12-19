@@ -3,6 +3,7 @@ package com.example.tmeg2101.test;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -80,17 +81,23 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-
+        Fragment contentFragment = null;
         if (id == R.id.nav_profile) {
-            Fragment contentFragment = null;
-        } else if (id == R.id.nav_family) {
 
+        } else if (id == R.id.nav_family) {
+            contentFragment = new FamilyFragment();
         } else if (id == R.id.nav_attended) {
 
         } else if (id == R.id.nav_essay) {
 
         } else if (id == R.id.nav_video) {
 
+        }
+
+        if (contentFragment != null) {
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.content_frame, contentFragment);
+            ft.commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
