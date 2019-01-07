@@ -83,15 +83,15 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
         Fragment contentFragment = null;
         if (id == R.id.nav_profile) {
-
+            contentFragment = new NavProfile();
         } else if (id == R.id.nav_family) {
             contentFragment = new FamilyFragment();
         } else if (id == R.id.nav_attended) {
-
+            contentFragment = new NavAttended();
         } else if (id == R.id.nav_essay) {
-
+            contentFragment = new NavEssay();
         } else if (id == R.id.nav_video) {
-
+            contentFragment = new NavVideo();
         }
 
         if (contentFragment != null) {
