@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         //backendless
-        Backendless.initApp(getApplicationContext(), , api-key );
+        Backendless.initApp(getApplicationContext(),"54E090E7-7547-44BF-FF1F-72162F736C00" , "CFE73954-E637-06C7-FFED-171228A63D00" );
 
     //    FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
     //    fab.setOnClickListener(new View.OnClickListener() {
