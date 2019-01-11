@@ -23,11 +23,11 @@ public class NavProfile extends android.support.v4.app.Fragment {
         super.onCreate(savedInstanceState);
         Submit = (Button) view.findViewById(R.id.submitProfileButton);
         //text
-        EditText first = (EditText) view.findViewById(R.id.editName);
-        EditText last = (EditText) view.findViewById(R.id.editLast);
-        EditText dob = (EditText) view.findViewById(R.id.editName);
-        EditText study = (EditText) view.findViewById(R.id.editName);
-        EditText address = (EditText) view.findViewById(R.id.editName);
+        final EditText first = (EditText) view.findViewById(R.id.editName);
+        final EditText last = (EditText) view.findViewById(R.id.editLast);
+        final EditText dob = (EditText) view.findViewById(R.id.editDOB);
+        final EditText study = (EditText) view.findViewById(R.id.editStudy);
+        final EditText address = (EditText) view.findViewById(R.id.editAddress);
 
 
 
