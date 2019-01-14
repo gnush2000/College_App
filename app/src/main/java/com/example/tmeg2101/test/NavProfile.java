@@ -31,7 +31,7 @@ public class NavProfile extends android.support.v4.app.Fragment {
         final EditText address = (EditText) view.findViewById(R.id.editAddress);
 
 
-
+        
         Submit.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Log.i(TAG, "First name is: " + first.getText().toString());
