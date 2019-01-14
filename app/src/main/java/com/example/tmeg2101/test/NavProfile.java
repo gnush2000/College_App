@@ -10,8 +10,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import com.backendless.Backendless;
-
-
+import com.backendless.BackendlessUser;
+import com.backendless.async.callback.AsyncCallback;
+import com.backendless.exceptions.BackendlessFault;
 
 
 public class NavProfile extends android.support.v4.app.Fragment {
@@ -38,5 +39,22 @@ public class NavProfile extends android.support.v4.app.Fragment {
             }
         });
         return view;
+
+        //check that connected to backendless
+
+        BackendlessUser user = new BackendlessUser();
+        user.setEmail( "Anne345@yahoo.com" );
+        user.setPassword( "LoveAnimals7" );
+
+        Backendless.UserService.register(user, new AsyncCallback<BackendlessUser>(){
+            @Override
+            public void handleResponse(BackendlessUser backendlessUser){
+                Log.i( "User ", backendlessUser.getEmail() + " successfully registered" );
+            }
+            @Override
+            public void handleFault(BackendlessFault backendlessFault) {
+                Log.e( "Backendless No Work!", backendlessFault.getMessage());
+            }
+        });
     }
 }
