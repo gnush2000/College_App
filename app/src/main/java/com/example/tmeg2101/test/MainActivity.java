@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -15,6 +16,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.support.v4.app.Fragment;
 import com.backendless.Backendless;
+import com.backendless.BackendlessUser;
+import com.backendless.async.callback.AsyncCallback;
+import com.backendless.exceptions.BackendlessFault;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -29,6 +33,21 @@ public class MainActivity extends AppCompatActivity
         //backendless
         Backendless.initApp(getApplicationContext(),"54E090E7-7547-44BF-FF1F-72162F736C00" , "CFE73954-E637-06C7-FFED-171228A63D00" );
 
+        //check that connected to backendless
+        BackendlessUser user = new BackendlessUser();
+        user.setEmail( "fake@fake.com" );
+        user.setPassword( "alsofake" );
+
+        Backendless.UserService.register(user, new AsyncCallback<BackendlessUser>(){
+            @Override
+            public void handleResponse(BackendlessUser backendlessUser){
+                Log.i( "User ", backendlessUser.getEmail() + " successfully registered" );
+            }
+            @Override
+            public void handleFault(BackendlessFault backendlessFault) {
+                Log.e( "backendless no work ", backendlessFault.getMessage());
+            }
+        });
     //    FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
     //    fab.setOnClickListener(new View.OnClickListener() {
     //        @Override

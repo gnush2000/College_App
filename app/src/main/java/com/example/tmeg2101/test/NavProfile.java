@@ -17,10 +17,13 @@ import com.backendless.exceptions.BackendlessFault;
 
 public class NavProfile extends android.support.v4.app.Fragment {
     private Button Submit;
+
     private static final String TAG =
             NavProfile.class.getName();
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
         View view = inflater.inflate(R.layout.nav_profile, container, false);
         super.onCreate(savedInstanceState);
         Submit = (Button) view.findViewById(R.id.submitProfileButton);
@@ -40,21 +43,6 @@ public class NavProfile extends android.support.v4.app.Fragment {
         });
         return view;
 
-        //check that connected to backendless
 
-        BackendlessUser user = new BackendlessUser();
-        user.setEmail( "Anne345@yahoo.com" );
-        user.setPassword( "LoveAnimals7" );
-
-        Backendless.UserService.register(user, new AsyncCallback<BackendlessUser>(){
-            @Override
-            public void handleResponse(BackendlessUser backendlessUser){
-                Log.i( "User ", backendlessUser.getEmail() + " successfully registered" );
-            }
-            @Override
-            public void handleFault(BackendlessFault backendlessFault) {
-                Log.e( "Backendless No Work!", backendlessFault.getMessage());
-            }
-        });
     }
 }
