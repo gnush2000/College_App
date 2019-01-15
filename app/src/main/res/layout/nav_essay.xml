@@ -29,6 +29,12 @@
             android:singleLine="false"
             android:textAlignment="textStart" />
 
+        <Button
+            android:id="@+id/essayUpload"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Submit" />
+
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
