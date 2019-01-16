@@ -1,0 +1,5 @@
+<root>
+    <item name='com.jaiselrahman.filepicker.activity.FilePickerActivity'>
+        <annotation name='java.lang.Deprecated' />
+    </item>
+</root>
