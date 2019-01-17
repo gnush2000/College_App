@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity
             }
             @Override
             public void handleFault(BackendlessFault backendlessFault) {
-                Log.e( "backendless no work ", backendlessFault.getMessage());
+                Log.i( "backendless no work ", backendlessFault.getMessage());
             }
         });
     //    FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
