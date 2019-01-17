@@ -26,16 +26,36 @@ public class NavEssay extends android.support.v4.app.Fragment{
             public void onClick(View v) {
                 Log.i("Submit"," click");
 
-                Intent intent = new Intent(this, FilePickerActivity.class);
+                Intent intent = new Intent(NavEssay.this.getActivity(), FilePickerActivity.class);
+                int FILE_REQUEST_CODE = 42;
                 startActivityForResult(intent, FILE_REQUEST_CODE);
 
-                case FILE_REQUEST_CODE:
-                ArrayList<MediaFile> files = data.getParcelableArrayListExtra(FilePickerActivity.MEDIA_FILES);
-                //Do something with files
-                break;
+                switch (FILE_REQUEST_CODE) {
+                    case 42:
+                        ArrayList<MediaFile> files = data.getParcelableArrayListExtra(FilePickerActivity.MEDIA_FILES);
+                        //Do something with files
+                        break;
+                }
 
             }
         });
+
         return view;
+
+    }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        try {
+            super.onActivityResult(requestCode, resultCode, data);
+
+            if (requestCode == FILE_REQUEST_CODE  && resultCode  == RESULT_OK) {
+
+                String requiredValue = data.getStringExtra("key");
+            }
+        } catch (Exception ex) {
+            Toast.makeText(Activity.this, ex.toString(),
+                    Toast.LENGTH_SHORT).show();
+        }
+
     }
 }
