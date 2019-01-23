@@ -16,18 +16,16 @@ public class FamilyFragment extends android.support.v4.app.Fragment{
 
         Button addMember = (Button) view.findViewById(R.id.addMember);
 
-
         final LinearLayout layout = (LinearLayout) view.findViewById(R.id.layout);
 
-        addMember.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-
-
-        EditText text = new EditText(FamilyFragment.this.getActivity());
-        LinearLayout.LayoutParams p = new LinearLayout.LayoutParams(
+        final LinearLayout.LayoutParams p = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.FILL_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
         );
+
+        addMember.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+        EditText text = new EditText(FamilyFragment.this.getActivity());
         layout.addView(text, p);
             }
         });
