@@ -34,7 +34,10 @@ public class NavEssay extends android.support.v4.app.Fragment{
                 Intent intent = new Intent(NavEssay.this.getActivity(), FilePickerActivity.class);
                 intent.putExtra(FilePickerActivity.CONFIGS, new Configurations.Builder()
                         .setMaxSelection(1)
-                        .enableImageCapture(true)
+                        .setShowVideos(false)
+                        .setShowImages(false)
+                        .setShowFiles(true)
+                        .setSuffixes("txt", "doc", "pdf", "docx")
                         .build());
 
                 startActivityForResult(intent, FILE_REQUEST_CODE);

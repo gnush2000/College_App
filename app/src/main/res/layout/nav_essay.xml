@@ -14,10 +14,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Your essay (copy and paste or upload)"
+            android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No more then 650 words"
+            android:textSize="24sp" />
 
         <EditText
             android:id="@+id/editText2"
