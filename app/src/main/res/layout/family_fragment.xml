@@ -12,11 +12,20 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/addMember"
+            android:id="@+id/addParent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="add family member"
+            android:layout_weight="1"
+            android:text="Add Parent/Legal Guardian"
             tools:layout_editor_absoluteY="19dp" />
+
+        <Button
+            android:id="@+id/addSibling"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Add sibling" />
+
     </LinearLayout>
 
     <LinearLayout
