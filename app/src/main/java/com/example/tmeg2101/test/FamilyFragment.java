@@ -25,7 +25,7 @@ public class FamilyFragment extends android.support.v4.app.Fragment{
                 LinearLayout.LayoutParams.WRAP_CONTENT
         );
 
-        final LinearLayout.LayoutParams vertical = new LinearLayout.LayoutParams(
+        final LinearLayout.LayoutParams horizontal = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.WRAP_CONTENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT,
                 LinearLayout.HORIZONTAL
@@ -35,25 +35,50 @@ public class FamilyFragment extends android.support.v4.app.Fragment{
         addParent.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 TextView textView = new TextView(FamilyFragment.this.getActivity());
-                textView.setText("First Name");
+                textView.setText("First/Last Name/Occupation");
                 layout.addView(textView, p);
                 LinearLayout addParent = new LinearLayout(FamilyFragment.this.getActivity());
-                layout.addView(addParent, vertical);
+                layout.addView(addParent, horizontal);
                 EditText firstName = new EditText(FamilyFragment.this.getActivity());
-                firstName.setHint("Name");
-                addParent.addView(firstName, vertical);
+                firstName.setHint("First Name");
+                addParent.addView(firstName, horizontal);
                 EditText lastName = new EditText(FamilyFragment.this.getActivity());
                 lastName.setHint("Last Name");
-                addParent.addView(lastName, vertical);
+                addParent.addView(lastName, horizontal);
+
+                EditText occupation = new EditText(FamilyFragment.this.getActivity());
+                occupation.setHint("Parent's Occupation");
+                addParent.addView(occupation, horizontal);
+
             }
         });
 
         //add sibling
         addSibling.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                EditText text = new EditText(FamilyFragment.this.getActivity());
-                text.setHint("Name");
-                layout.addView(text, p);
+                TextView textView = new TextView(FamilyFragment.this.getActivity());
+                textView.setText("First/Last Name/Age");
+                layout.addView(textView, p);
+
+                LinearLayout addParent = new LinearLayout(FamilyFragment.this.getActivity());
+                layout.addView(addParent, horizontal);
+                EditText firstName = new EditText(FamilyFragment.this.getActivity());
+                firstName.setHint("First Name");
+                addParent.addView(firstName, horizontal);
+                EditText lastName = new EditText(FamilyFragment.this.getActivity());
+                lastName.setHint("Last Name");
+                addParent.addView(lastName, horizontal);
+
+                EditText age = new EditText(FamilyFragment.this.getActivity());
+                age.setHint("Sibling's Age");
+                addParent.addView(age, horizontal);
+
+
+
+
+              //  EditText text = new EditText(FamilyFragment.this.getActivity());
+               // text.setHint("Name");
+                //layout.addView(text, p);
             }
         });
 
