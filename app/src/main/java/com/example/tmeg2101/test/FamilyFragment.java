@@ -35,7 +35,7 @@ public class FamilyFragment extends android.support.v4.app.Fragment{
         addParent.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 TextView textView = new TextView(FamilyFragment.this.getActivity());
-                textView.setText("First Name");
+                textView.setText("First");
                 layout.addView(textView, p);
                 LinearLayout addParent = new LinearLayout(FamilyFragment.this.getActivity());
                 layout.addView(addParent, vertical);
