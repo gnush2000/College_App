@@ -11,16 +11,17 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent">
 
-        <Button
-            android:id="@+id/addSchool"
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add School"
-            tools:layout_editor_absoluteX="188dp"
-            tools:layout_editor_absoluteY="102dp" />
-
+            android:text="Attented content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </LinearLayout>
 
+<<<<<<< HEAD
     <LinearLayout
         android:id="@+id/layout"
         android:layout_width="match_parent"
@@ -28,4 +29,6 @@
         android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent"></LinearLayout>
 
+=======
+>>>>>>> parent of c601c9d... sedf
 </android.support.constraint.ConstraintLayout>
